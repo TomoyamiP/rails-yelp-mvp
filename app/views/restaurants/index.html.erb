@@ -3,7 +3,9 @@
 <ul class="list-group">
   <% @restaurants.each do |restaurant| %>
     <li class="list-group-item">
-      <h5><%= restaurant.name %></h5>
+      <h5>
+        <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none" %>
+      </h5>
       <p class="mb-1">
         <strong>Address:</strong> <%= restaurant.address %><br>
         <strong>Phone:</strong> <%= restaurant.phone_number %><br>

@@ -1,11 +1,24 @@
 <div class="container mt-4">
   <h1 class="mb-4"><%= @restaurant.name %></h1>
-  <div class="card">
+  <div class="card mb-4">
     <div class="card-body">
       <p><strong>Address:</strong> <%= @restaurant.address %></p>
       <p><strong>Phone:</strong> <%= @restaurant.phone_number %></p>
       <p><strong>Category:</strong> <%= @restaurant.category.capitalize %></p>
     </div>
   </div>
+  <h3>Reviews</h3>
+  <% if @reviews.any? %>
+    <ul class="list-group">
+      <% @reviews.each do |review| %>
+        <li class="list-group-item">
+          <strong>Rating:</strong> <%= review.rating %> / 5<br>
+          <%= review.content %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No reviews yet.</p>
+  <% end %>
   <%= link_to "Back to Restaurants", restaurants_path, class: "btn btn-secondary mt-3" %>
 </div>
