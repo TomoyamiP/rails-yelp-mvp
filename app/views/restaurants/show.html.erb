@@ -7,7 +7,10 @@
       <p><strong>Category:</strong> <%= @restaurant.category.capitalize %></p>
     </div>
   </div>
-  <h3>Reviews</h3>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Reviews</h3>
+    <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  </div>
   <% if @reviews.any? %>
     <ul class="list-group">
       <% @reviews.each do |review| %>
