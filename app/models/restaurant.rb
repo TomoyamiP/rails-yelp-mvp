@@ -7,7 +7,7 @@ class Restaurant < ApplicationRecord
 
   validates :address, presence: true
 
-  CATEGORY = ["Chinese", "Italian", "Japanese", "French", "Belgian"]
+  CATEGORY = ["chinese", "italian", "japanese", "french", "belgian"]
 
   validates :category, inclusion: { in: CATEGORY }
 end
